@@ -7,7 +7,6 @@ if (!isset($_SESSION['idAdmin'])) {
     header("Location: index.php");
 }
 
-$TDLs = getAllTDL();
 
 ?>
 <!DOCTYPE html>
@@ -16,51 +15,32 @@ $TDLs = getAllTDL();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?></title>
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="homeAdmin.css">
 </head>
 
 <body>
-    <div class='flex items-center justify-center my-10'>
-        <?php foreach ($TDLs as $TDL) { ?>
-            <div class="rounded-xl border mx-4 p-5 shadow-md w-4/12 bg-white">
-                <div class="flex w-full items-center justify-between border-b pb-3">
-                    <div class="flex items-center space-x-3">
-                        <div class="text-lg font-bold text-slate-700"><?= $title ?></div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <?php if (isset($_SESSION['idAdmin'])) { ?>
-                            <button class="rounded-xl border bg-neutral-100 px-3 py-1 text-xs font-semibold">Modifier</button>
-                            <button class="rounded-xl border bg-neutral-100 px-3 py-1 text-xs font-semibold">Supprimer</button>
-                        <?php } ?>
-                    </div>
-                </div>
-
-                <div class="mt-4 mb-6">
-                    <div class="mb-3 text-xl font-bold"><?= $TDL['titreTDL'] ?></div>
-                    <div class="text-sm text-neutral-600"><?= $TDL['descTDL'] ?></div>
-                </div>
-
-                <div>
-                    <div class="flex space-x-4 items-center justify-space-between text-slate-500">
-                        <div class="flex space-x-4 md:space-x-60 w-full">
-                            <div class="flex cursor-pointer items-center transition hover:text-slate-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                                </svg>
-                                <span><?= $TDL['nbrCommTDL'] ?></span>
-                            </div>
-                            <div id="more" class="flex cursor-pointer items-center transition hover:text-slate-600">
-                                <a href="" id="lirePlus">Plus&nbsp;</a>
-                                <span><img width="20" height="20" src="https://img.icons8.com/?size=100&id=26138&format=png&color=000000" alt=""></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+        <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">OPENLOI - Plateforme Numérique</h1>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+                OpenLoi est une plateforme numérique participative qui permet aux citoyens de s'impliquer activement dans le processus législatif
+                Elle offre un espace où les utilisateurs peuvent consulter les textes de loi en cours de discussion, laisser leurs commentaires, 
+                soumettre des idées et émettre des suggestions sur les différentes propositions
+            </p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    Get started
+                    <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    Learn more
+                </a>
             </div>
-        <?php }  ?>
-    </div>
+        </div>
+    </section>
 </body>
 
 </html>
