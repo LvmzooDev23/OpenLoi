@@ -1,14 +1,15 @@
 <?php
+session_start();
 require_once("config.php");
 require_once("SERVICES/user_services.php");
-session_start();
+require_once("menu.php");
 if (!isset($_SESSION['id'])) {
     header("Location: index.php");
 }
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +21,7 @@ if (!isset($_SESSION['id'])) {
 <body>
     <!-- component -->
     <!-- This is an example component -->
-    <div class='flex items-center justify-center min-h-screen'>
+    <div class='flex items-center justify-center my-10'>
         <div class="rounded-xl border mx-4 p-5 shadow-md w-4/12 bg-white">
             <div class="flex w-full items-center justify-between border-b pb-3">
                 <div class="flex items-center space-x-3">

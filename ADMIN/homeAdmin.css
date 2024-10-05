@@ -1,0 +1,12 @@
+#more{
+    transition: all 0.3s ease-in-out;
+}
+
+#more:hover{
+    transform: translateX(5px);
+}
+#lirePlus:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+

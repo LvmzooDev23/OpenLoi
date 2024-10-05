@@ -1,5 +1,5 @@
 <?php
-require_once("config.php");
+require_once("../config.php");
 if (isset($_POST['deconnexion'])) {
     session_destroy();
     header("Location: index.php");
@@ -65,21 +65,27 @@ if (isset($_POST['deconnexion'])) {
                         <a
                             href="#"
                             class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                            Mes Idées
+                            Liste des Idées
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="addTexte.php"
+                            class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                            Ajouter un texte
                         </a>
                     </li>
                     <li>
                         <form action="" method="post">
-                        <button
-                            type="submit" name="deconnexion"
-                            class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                            Déconnexion
-                        </button>
+                            <button
+                                type="submit" name="deconnexion"
+                                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                                Déconnexion
+                            </button>
                         </form>
                     </li>
                 </ul>
             </div>
-
         </div>
     </nav>
 
